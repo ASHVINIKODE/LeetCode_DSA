@@ -31,5 +31,23 @@ class Solution {
         ListNode newHead = newTail.next;
         newTail.next = null;
         return newHead;
+
+        // ListNode fast = head;
+        // for (int i = 0; i < k; i++) {
+        //     fast = fast.next;
+        // }
+
+        
+        // ListNode slow = head;
+        // while (fast.next != null) {
+        //     slow = slow.next;
+        //     fast = fast.next;
+        // }
+
+        // ListNode newHead = slow.next;
+        // slow.next = null;
+        // fast.next = head;
+
+        // return newHead;
     }
 }
