@@ -22,14 +22,18 @@ class Solution {
         k = k % n;
         if (k == 0)
             return head;
-        temp.next = head;
-        int move = n - k;
-        ListNode newTail = head;
-        for (int i = 1; i < move; i++) {
-            newTail = newTail.next;
+        ListNode fast = head;
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
         }
-        ListNode newHead = newTail.next;
-        newTail.next = null;
+        ListNode slow = head;
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        ListNode newHead = slow.next;
+        slow.next = null;
+        fast.next = head;
         return newHead;
     }
 }
